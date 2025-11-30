@@ -125,6 +125,9 @@ nav {
     border-color: var(--accent-green);
 }
 
+/* Culoare hover specifică pentru Instagram (Folosim Mov, culoarea creativă) */
+.social-btn.insta:hover .social-icon { fill: var(--accent-purple); }
+
 /* --- SKILLS SECTION --- */
 .skills-section {
     padding: 40px 10%;
