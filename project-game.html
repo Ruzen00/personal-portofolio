@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roguelike TD - Project Details</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+		<style>
+    /* ATENȚIE: Acest bloc înlocuiește complet blocul <style> existent. */
+    body { padding-bottom: 100px; }
+    .page-container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    
+    /* Header */
+    .project-header { margin-bottom: 40px; border-bottom: 1px solid #30363d; padding-bottom: 20px; }
+    .back-link { display: inline-flex; align-items: center; color: var(--accent-blue); font-weight: bold; margin-bottom: 20px; font-size: 0.9rem; }
+    .back-link:hover { color: var(--accent-purple); transform: translateX(-5px); }
+    
+    .project-title { font-family: var(--font-pixel); font-size: 2rem; color: white; margin-bottom: 15px; line-height: 1.4; }
+    .project-tags { display: flex; gap: 10px; margin-bottom: 20px; }
+
+    /* NOU: Container principal (video full-width) */
+    .media-grid-main {
+        display: grid;
+        grid-template-columns: 1fr; /* O singura coloana */
+        gap: 30px;
+        margin: 40px 0;
+    }
+
+    /* NOU: Grila pentru screenshot-uri (două coloane) */
+    .screenshot-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Două coloane mari, flexibile */
+        gap: 20px;
+    }
+    
+    /* Stiluri generale pentru item */
+    .media-item {
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 8px;
+        overflow: hidden;
+        /* Asiguram centrare */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        /* Eliminam aspect-ratio pentru a permite inaltime nativa */
+        aspect-ratio: auto;
+    }
+
+    /* Imaginile se intind pe latime, dar pastreaza inaltimea nativa */
+    .media-item img, .media-item video {
+        width: 100%;
+        height: auto;
+        object-fit: contain; 
+        display: block;
+    }
+    
+    /* Pentru videouri, putem pastra un aspect ratio mai traditional daca sunt full-width */
+    .media-item.video-slot {
+        aspect-ratio: 16/9; 
+    }
+
+    .placeholder-text { color: var(--text-dim); font-size: 0.8rem; text-align: center; padding: 20px; }
+
+    /* Devlog (restul stilurilor raman la fel) */
+    .devlog-entry { background: rgba(255,255,255,0.02); border-left: 3px solid var(--accent-green); padding: 20px; margin-bottom: 25px; border-radius: 0 8px 8px 0; }
+    .entry-date { color: var(--text-dim); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: block; }
+    .entry-title { color: var(--accent-purple); font-size: 1.1rem; margin-bottom: 10px; font-weight: bold; }
+    
+    ul.feature-list { margin-left: 20px; margin-top: 10px; color: var(--text-main); }
+    ul.feature-list li { margin-bottom: 5px; }
+
+    /* Responsivitate pentru grila de screenshot-uri */
+    @media (max-width: 800px) {
+        .screenshot-grid {
+            grid-template-columns: 1fr; /* Pe mobil, toate pozele ocupa o singura coloana */
+        }
+    }
+</style>
+</head>
+<body>
+
+    <nav style="position:relative; border:none; background: transparent;">
+        <div class="brand">&lt;Talpan_Daniel /&gt;</div>
+    </nav>
+
+    <div class="page-container">
+        
+        <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+
+        <header class="project-header">
+            <div class="project-tags">
+                <span class="skill-tag game">Godot 4</span>
+                <span class="skill-tag game">GDScript</span>
+                <span class="skill-tag qa">In Development</span>
+            </div>
+            <h1 class="project-title">Roguelike Tower Defense</h1>
+            <p class="hero-desc">
+                A strategic 2D game combining Tower Defense mechanics with Roguelike progression. 
+                Building complex logic and custom pixel art from scratch.
+            </p>
+        </header>
+
+        <section>
+            <h2 style="color: white; border-bottom: 1px solid #30363d; padding-bottom:10px; display:inline-block;">Gameplay Preview</h2>
+            
+            <div class="media-grid-main">
+                <div class="media-item video-slot">
+                    <div class="placeholder-text">
+                        🎥 **SLOT PRINCIPAL:** Video/Demo Gameplay<br>
+                        (Ideal pentru a arăta loop-ul de bază al jocului)
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: white; margin-top: 40px; margin-bottom: 20px;">Key Screenshots</h3>
+
+            <div class="screenshot-grid">
+                
+                <div class="media-item">
+                    <img src="images/gameplay1.webp" alt="Roguelike TD - Title Screen" loading="lazy">
+                </div>
+					<p>Round Start</p>
+
+                <div class="media-item">
+                    <img src="images/gameplay5.webp" alt="Roguelike TD - Nivel de pădure cu turnuri" loading="lazy">
+                </div>
+
+                <div class="media-item">
+                    <img src="images/gameplay3.webp" alt="Roguelike TD - Screenshot luptă cu inamici" loading="lazy">
+                </div>
+                
+                <div class="media-item">
+                    <img src="images/gameplay4.webp" alt="Roguelike TD - Ecran Game Over" loading="lazy">
+                </div>
+                
+            </div>
+        </section>
+
+        <section style="margin-bottom: 50px;">
+            <h2 style="color: white; margin-bottom: 20px;">Technical Highlights</h2>
+            <p>Since I am transitioning into Automation, this project acts as a sandbox for complex logic:</p>
+            <ul class="feature-list">
+                <li><strong>Pathfinding:</strong> Custom navigation using NavigationServer.</li>
+                <li><strong>State Machines:</strong> Managing complex enemy behaviors.</li>
+                <li><strong>OOP Principles:</strong> Modular code structure using inheritance.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 style="color: white; margin-bottom: 20px;">Development Log</h2>
+            <div class="devlog-entry">
+                <span class="entry-date">Current Stage</span>
+                <div class="entry-title">Game Loop & Wave Logic</div>
+                <p>Refining the wave system and balancing enemy spawn rates.</p>
+            </div>
+            <div class="devlog-entry">
+                <span class="entry-date">Month 1</span>
+                <div class="entry-title">Art & Concept</div>
+                <p>Created initial pixel art assets and tilemaps in Aseprite.</p>
+            </div>
+        </section>
+
+        <footer style="border-top: none; margin-top: 50px;">
+            <a href="index.html" class="cta-btn outline" style="padding: 10px 20px; font-size: 0.9rem;">Back to Portfolio</a>
+        </footer>
+
+    </div>
+
+    <button onclick="topFunction()" id="backToTop" title="Go to top">⬆</button>
+    <script src="script.js"></script>
+
+</body>
+</html>
